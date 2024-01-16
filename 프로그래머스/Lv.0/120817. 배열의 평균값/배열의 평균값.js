@@ -4,11 +4,6 @@ function solution(numbers) {
     
     for (number of numbers) {
         total += number;
-        
-        if (numbers.lastIndexOf(number) === numbers.length - 1) {
-            let average = total / numbers.length;
-            answer = average;
-        }
     }
-    return answer;
+    return total / numbers.length;
 }
