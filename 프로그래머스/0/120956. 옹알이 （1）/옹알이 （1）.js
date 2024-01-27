@@ -2,16 +2,17 @@ function solution(babbling) {
     var answer = 0;
     let possibleWords = ['aya', 'ye', 'woo', 'ma'];
     
-    for (let babble of babbling) {
+    answer = babbling.reduce((acc, elem, index, array) => {
+        let letterCount = 0;
+        
         for (let possibleWord of possibleWords) {
-            while (babble.includes(possibleWord)) {
-                let index = babble.indexOf(possibleWord);
-                babble = [...babble];
-                babble.splice(index, possibleWord.length, ' ');
-                babble = babble.join('');
-            }
+            if (elem.includes(possibleWord)) {
+                letterCount += possibleWord.length;
+            } 
         }
-        babble.trim() === '' ? answer++ : 0;
-    }
+        console.log(elem.length === letterCount);
+        return acc + (elem.length === letterCount ? 1 : 0);
+    }, 0);
+    
     return answer;
 }
