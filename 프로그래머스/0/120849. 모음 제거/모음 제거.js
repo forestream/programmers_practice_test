@@ -1,11 +1,9 @@
 function solution(my_string) {
     var answer = '';
-    const VOWELS = ['a', 'e', 'i', 'o', 'u'];
+    let stringArray = [...my_string];
+    const VOWELS = ['a','e','i','o','u'];
     
-    for (let letter of my_string) {
-        if (VOWELS.includes(letter)) continue;
-        answer += letter;
-    }
-    
+    answer = stringArray.filter((letter) => !(VOWELS.includes(letter)));
+    answer = answer.join('');
     return answer;
 }
