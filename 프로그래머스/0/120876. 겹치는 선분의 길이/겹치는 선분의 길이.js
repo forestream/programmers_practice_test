@@ -14,13 +14,11 @@ function solution(lines) {
             if (arr2.includes(num)) acc.push(num);
             return acc;
         }, []).slice(1));
-        console.log(overlap);
         
         overlap.push(arr1.reduce((acc, num) => {
             if (arr3.includes(num)) acc.push(num);
             return acc;
         }, []).slice(1));
-                console.log(overlap);
 
         
         // overlap.push(arr2.reduce((acc, num) => {
@@ -32,7 +30,6 @@ function solution(lines) {
             if (arr3.includes(num)) acc.push(num);
             return acc;
         }, []).slice(1));
-                console.log(overlap);
 
         
 //         overlap.push(arr3.reduce((acc, num) => {
@@ -44,7 +41,6 @@ function solution(lines) {
 //             if (arr2.includes(num)) acc.push(num);
 //             return acc;
 //         }, []).slice(1));
-console.log(String(overlap).split(',').filter((num) => num !== ''));
         
         overlap = String(overlap).split(',').filter((num) => num !== '').map((n) => +n);
         overlap.sort((a, b) => a - b);
@@ -53,7 +49,6 @@ console.log(String(overlap).split(',').filter((num) => num !== ''));
             if (acc[acc.length - 1] !== num) acc.push(num);
             return acc;
         }, [])
-        console.log(lengthArr);
         return lengthArr;
     }
     
