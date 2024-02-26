@@ -1,9 +1,7 @@
 function solution(board) {
-    let safe = 0;
     let coordinates = [];
     let unsafeCoordinates = [];
     let sideLength = board.length;
-    let newBoard = Array.from(Array(sideLength), () => Array(sideLength).fill(0));
     
     const findMines = () => {
         for (let row = 0; row < sideLength; row++) {
@@ -36,8 +34,6 @@ function solution(board) {
 
     if (coordinates.length > 0) {
         markUnsafe();
-                    console.log(unsafeCoordinates);
-
         return (sideLength ** 2) - unsafeCoordinates.length - coordinates.length;
     } else {
         return sideLength ** 2;
