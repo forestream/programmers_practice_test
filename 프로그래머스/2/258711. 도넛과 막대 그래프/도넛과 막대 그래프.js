@@ -11,10 +11,6 @@ class DirectedGraph {
         return value;
     }
     
-    getVertex(value) {
-        return this.vertices.find((vertex) => vertex === value);
-    }
-    
     addEdge(value1, value2) {
         let vertex1 = this.vertices[value1];
         if (!vertex1) vertex1 = this.addVertex(value1);
